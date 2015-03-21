@@ -1,9 +1,13 @@
-<%= current_user.name %>
-<%= current_user.age %>
-<%= current_user.location %>
-<%= current_user.email %>
-<%= current_user.bio %>
 
+
+<div id="profile_info">
+  <h2>Profile</h2>
+  <p>Name:  <%= current_user.name %><br></p>
+  <p>Age:   <%= current_user.age %><br></p>
+  <p>Where: <%= current_user.location %><br></p>
+  <p>Email: <%= current_user.email %><br></p>
+  <p>Bio:   <%= current_user.bio %><br></p>
+</div>
 <% @user.events.each do |event| %>
 <%= render partial: 'events/display_events', locals: {:event => event} %> 
 <% end %>
