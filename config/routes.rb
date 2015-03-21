@@ -1,12 +1,16 @@
-  Rails.application.routes.draw do
+
+Rails.application.routes.draw do
 
   root to: "events#index"
     devise_for :users, :controllers => { registrations: 'registrations' }
+
   get 'users/show'
   
   
  
   resources :events
+  
+  resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
