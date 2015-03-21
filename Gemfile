@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap_form'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
