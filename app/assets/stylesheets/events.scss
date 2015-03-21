@@ -11,6 +11,7 @@
   padding: 0;
   box-shadow: 1px 1px 8px #d8d8d8;
   background-color: #FFFFFF;
+  margin: 5px;
 }
 .block-update-card .h-status {
   width: 100%;
@@ -99,7 +100,16 @@ Creating a block for social media buttons
   cursor: pointer;
   margin-left: 10px;
 }
+.card-body-social{
+color: #007BB6;
+  cursor: pointer;
+  margin-left: 10px;
+}
 
 .music-card {
   background-color: green;
+}
+
+.card-muted{
+	color:grey;
 }

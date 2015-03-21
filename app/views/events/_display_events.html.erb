@@ -1,4 +1,4 @@
-
+<%= link_to event_path(event) do %>
 <div class="block-update-card status">
     <div class="update-card-body">
       <div class="update-card-body">
@@ -12,9 +12,11 @@
     </div>
     
     <div class="card-action-pellet btn-toolbar pull-right" role="toolbar">
-  <div class="btn-group fa fa-mail-reply"></div>
-  <div class="btn-group fa fa-map-marker"></div>
-  <div class="btn-group fa fa-magic"></div>
-  <div class="btn-group fa fa-photo"></div>
+    <% if event.user == current_user %>
+    <%= link_to edit_event_path(event) do %>
+	  <i class="card-muted btn-group fa fa-magic"></i>
+	<% end %>
+	<% end %>
 </div>
 </div>
+<% end %>
