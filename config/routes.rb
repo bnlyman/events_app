@@ -1,8 +1,9 @@
 
 Rails.application.routes.draw do
 
-  root to: "events#index"
-    devise_for :users, :controllers => { registrations: 'registrations' }
+  root 'static_pages#landing'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   get 'users/show'
   
