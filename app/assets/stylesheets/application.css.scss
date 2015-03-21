@@ -12,11 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
+$body-bg: #474747;
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+git
 body {
   margin-top: 80px;
 }
@@ -61,6 +65,9 @@ body {
     border-color: none;
   }
 }
+.yeah{
+  height: 100px;
+}
 
 /*************************
 
@@ -98,8 +105,20 @@ body {
 /*************************
 
 
-    Sign up page
+  Comments Styling
 
+
+*************************/
+
+
+.comments {
+  display: inline-block;
+}
+
+/*************************
+
+
+    Sign up page
 
 *************************/
 
