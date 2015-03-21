@@ -20,6 +20,7 @@ $body-bg: #474747;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .row-centered {
     text-align:center;
 }
@@ -31,6 +32,7 @@ $body-bg: #474747;
     /* inline-block space fix */
     margin-right:-4px;
 }
+
 body {
   margin-top: 80px;
 }
@@ -143,15 +145,14 @@ body
 
 
 #sign_up_center {
-  padding-left: 250px;
+  padding-left: 30%;
   font-size: 60px;
-  margin-top: -50px;
 }
 
 .sign_up_button {
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 10px 323px;
+  padding: 2% 20%;
 }
 
 
