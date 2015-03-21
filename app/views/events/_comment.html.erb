@@ -4,7 +4,8 @@
   <%= "Rating of experience: #{comment.rating}" %><br>
   <%= "User: #{current_user.name}"%><br>
   <%= link_to 'Delete', comment_path(comment), method: :delete if current_user.id == comment.user_id %>
-  <%= link_to 'Edit', edit_comment_path(comment) if current_user.id == comment.user_id %>
+  <%= link_to 'Edit', edit_comment_path(comment) if current_user.id == comment.user_id %><br>
+  <hr>
 <% end %>
 <hr>
 

@@ -15,7 +15,7 @@
  *= require font-awesome
  */
 
- $body-bg: #474747;
+$body-bg: #474747;
 @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -101,8 +101,12 @@ body {
   }
 }
 
-
-
+/*
+  Comments Styling
+*/
+.comments {
+  display: inline-block;
+}
 
 
 
