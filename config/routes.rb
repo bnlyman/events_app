@@ -1,4 +1,8 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
+  
+  get 'users/show'
+  
+  devise_for :users, :controllers => { registrations: 'registrations' }
  
   resources :events
 
