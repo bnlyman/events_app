@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_user
 
   def show
@@ -11,11 +11,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = @event.new
+    @event = Event.new
   end
 
   def create
-    @event = @event.new(event_params)
+    @event = Event.new(event_params)
     if @event.save
       redirect_to @event
     else
@@ -55,6 +55,6 @@ private
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 end
