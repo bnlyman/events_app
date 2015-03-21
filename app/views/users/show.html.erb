@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= current_user.name %>
+<%= current_user.age %>
+<%= current_user.location %>
+<%= current_user.email %>
+<%= current_user.bio %>
+
+<% @user.events.each do |event| %>
+<%= render partial: 'events/display_events', locals: {:event => event} %> 
+<% end %>
