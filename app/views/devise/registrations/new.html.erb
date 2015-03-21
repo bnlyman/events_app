@@ -1,54 +1,55 @@
+<div class="block-update-card form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+     <h2 id="sign_up_center">Sign up</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-   <h2 id="sign_up_center">Sign up</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      
-      <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
+        <div class="field">
+          <%= f.label :age %><br />
+          <%= f.number_field :age, class: 'form-control' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :age %><br />
-        <%= f.number_field :age, class: 'form-control' %>
-      </div>
+        <div class="field">
+          <%= f.label :location %><br />
+          <%= f.text_field :location, class: 'form-control' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :location %><br />
-        <%= f.text_field :location, class: 'form-control' %>
-      </div>
+        <div class="field">
+          <%= f.label :bio %><br />
+          <%= f.text_area :bio, class: 'form-control' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :bio %><br />
-        <%= f.text_area :bio, class: 'form-control' %>
-      </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-      </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-      </div>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-      </div>
+       
+          <%= f.submit "Sign up", class: "btn btn-primary sign_up_button" %><br>
+          <%= render "devise/shared/links" %>
+      <% end %>
 
-     
-        <%= f.submit "Sign up", class: "btn btn-primary sign_up_button" %><br>
-        <%= render "devise/shared/links" %>
-    <% end %>
-
-      
-      
+        
+        
+    </div>
   </div>
 </div>
