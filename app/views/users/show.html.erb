@@ -4,6 +4,40 @@
 <%= current_user.email %>
 <%= current_user.bio %>
 
-<% @user.events.each do |event| %>
-<%= render partial: 'events/display_events', locals: {:event => event} %> 
-<% end %>
+
+
+<div class ="container">
+		<h1> Events you've posted</h1>
+		<p><%= link_to 'New Event', new_event_path, class: 'btn btn-primary'%></p>
+		<table id = 'list_events' class = 'table table-striped'>
+			<thead>
+	      <tr>
+	      	<th>Title</th>
+	      	<th>Location</th>
+	        <th>Category</th>
+	        <th>Rating</th>
+	        <th>Price</th>
+	        <th></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    <% @user.events.each do |event| %>
+	    <tr>
+			  <td><%= event.title %></td>
+			  <td><%= event.location %></td>
+			  <td><%= event.category %></td>
+			  <td><%= event.rating %></td>
+			  <td>$<%= event.price %></td>
+			  <td>
+			  <div class="btn-group btn-group-xs">
+					<%= link_to 'View', event_path(event), class: "btn btn-primary" %>
+					<%= link_to 'Edit', edit_event_path(event), class: "btn btn-primary" %>
+					<%= link_to 'Delete', event, data: { confirm: "Are you sure you wish to delete this listing?" }, method: :delete, class: "btn btn-primary" %>
+				</div>
+				</td>
+			</tr>
+			<% end %>
+	    </tbody>
+  	</table>
+	</div>
+</body
