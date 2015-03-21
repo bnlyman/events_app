@@ -12,10 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
+ $body-bg: #474747;
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 body {
   margin-top: 80px;
@@ -60,6 +64,9 @@ body {
     background-color: gray;
     border-color: none;
   }
+}
+.yeah{
+  height: 100px;
 }
 
 /*************************

@@ -1,6 +1,22 @@
-<%= event.title %>
-<%= event.location %>
-<%= event.price %>
-<%= event.category %>
-<%= event.rating %>
-<%= event.description %>
+<%= link_to event_path(event) do %>
+<div class="block-update-card status">
+    <div class="update-card-body">
+      <div class="update-card-body">
+      <h3><%= event.title %></h4>
+      <p><%= event.description %></p>
+      <p><span class="fa fa-globe"> <%= event.location %></span> <span class="fa fa-usd"> <%= event.price %></span></p>
+      <p>Category: <%= event.category %></p>
+      
+    </div>
+
+    </div>
+    
+    <div class="card-action-pellet btn-toolbar pull-right" role="toolbar">
+    <% if event.user == current_user %>
+    <%= link_to edit_event_path(event) do %>
+	  <i class="card-muted btn-group fa fa-magic"></i>
+	<% end %>
+	<% end %>
+</div>
+</div>
+<% end %>
