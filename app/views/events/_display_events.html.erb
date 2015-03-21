@@ -1,6 +1,20 @@
-<%= event.title %>
-<%= event.location %>
-<%= event.price %>
-<%= event.category %>
-<%= event.rating %>
-<%= event.description %>
+
+<div class="block-update-card status">
+    <div class="update-card-body">
+      <div class="update-card-body">
+      <h3><%= event.title %></h4>
+      <p><%= event.description %></p>
+      <p><span class="fa fa-globe"> <%= event.location %></span> <span class="fa fa-usd"> <%= event.price %></span></p>
+      <p>Category: <%= event.category %></p>
+      
+    </div>
+
+    </div>
+    
+    <div class="card-action-pellet btn-toolbar pull-right" role="toolbar">
+  <div class="btn-group fa fa-mail-reply"></div>
+  <div class="btn-group fa fa-map-marker"></div>
+  <div class="btn-group fa fa-magic"></div>
+  <div class="btn-group fa fa-photo"></div>
+</div>
+</div>
