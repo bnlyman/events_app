@@ -4,22 +4,20 @@
 <% @event.comments.each_with_index do |comment, index| %>
   <%= index + 1 %>
   <%= comment.body %>
+  <%= link_to 'Delete', comment_path(comment), method: :delete if current_user.id == comment.user_id %>
   <br>
 <% end %>
 <hr>
 
-<%= form_for Comment.new do |f| %>
-  <%= f.label :body%>
-  <%= f.text_field :body %>
+<%= bootstrap_form_for Comment.new do |f| %>
+  <%= f.text_area :body, label: "Add a comment:"  %>
 
-  <%= f.label :user_id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
-  <%= f.label :event_id %>
   <%= f.hidden_field :event_id, value: @event.id %>
 
-  <%= f.label :vote_count %>
-  <%= f.select :vote_count, options_for_select(%w(1 2 3 4 5 6 7 8 9 10))%>
+  
+  <%= f.select :vote_count,  options_for_select(%w(1 2 3 4 5 6 7 8 9 10)), label: "Rate your experience.  1 = Terrible   10 = Great"%>
 
   <%= f.submit 'Add Comment' %>
 <% end %>

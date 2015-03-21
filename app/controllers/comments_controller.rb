@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to comments_path
+      redirect_to :back
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to comments_path
+    redirect_to :back
   end
 
   private
