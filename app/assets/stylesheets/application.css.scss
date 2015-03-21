@@ -21,6 +21,14 @@ body {
   margin-top: 80px;
 }
 
+/*************************
+
+
+    Header
+
+
+*************************/
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -35,3 +43,36 @@ body {
     text-decoration: none;
   }
 }
+
+
+/*************************
+
+
+    jumbotron
+
+
+*************************/
+
+
+.sign_in {
+  background-color: black;
+  &:hover {
+    background-color: gray;
+    border-color: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
