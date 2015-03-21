@@ -1,12 +1,31 @@
-<div class="center jumbotron">
-  <h1>Want a list of the greatest</h1>
-  <h2 id="h2jumbo">local Events in your area?</h2>
-  <h3>Sign up and let the party begin!</h3>
+<div class ="container">
+		<h1> Events </h1>
+		<p><%= link_to 'New Event', new_event_path, class: 'btn btn-primary'%></p>
+		<table id = 'list_events' class = 'table table-striped'>
+			<thead>
+	      <tr>
+	      	<th>Title</th>
+	      	<th>Location</th>
+	        <th>Category</th>
+	        <th>Rating</th>
+	        <th>Price</th>
+	        <th>Posted by:</th>
+	        <th></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    <% @events.each do |event| %>
+	    <tr>
+			  <td><%= event.title %></td>
+			  <td><%= event.location %></td>
+			  <td><%= event.category %></td>
+			  <td><%= event.rating %></td>
+			  <td>$<%= event.price %></td>
+			  <td><%= event.user.email %></td>
+			  <td><%= link_to 'View', event_path(event), class: "btn btn-primary" %></td>
+			</tr>
+			<% end %>
+	    </tbody>
+  	</table>
+	</div>
 
-  <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-lg btn-primary sign_in" %>
-</div>
-
-
-<% @events.each do |event| %>
-<%= render partial: 'display_events', locals: {:event => event} %> 
-<% end %>

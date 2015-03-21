@@ -44,8 +44,8 @@ class EventsController < ApplicationController
     if @event.user != current_user
       redirect_to @event, notice: "You are not authorized to delete this event."
     else
-    @even.destroy
-    redirect_to index_path
+    @event.destroy
+    redirect_to users_show_path
     end
   end
 
