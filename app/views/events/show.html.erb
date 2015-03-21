@@ -1,4 +1,4 @@
-<%= render 'display_events' %>
+<%= render partial: 'display_events', locals: {:event => @event} %>
 <%= form_for Comment.new do |f| %>
   <%= f.label :body%>
   <%= f.text_field :body %>
