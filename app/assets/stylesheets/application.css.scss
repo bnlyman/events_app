@@ -20,7 +20,7 @@ $body-bg: #474747;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+git
 body {
   margin-top: 80px;
 }
@@ -101,15 +101,41 @@ body {
   }
 }
 
-/*
+
+/*************************
+
+
   Comments Styling
-*/
+
+
+*************************/
+
+
 .comments {
   display: inline-block;
 }
 
+/*************************
 
 
+    Sign up page
+
+*************************/
+
+
+
+
+#sign_up_center {
+  padding-left: 250px;
+  font-size: 60px;
+  margin-top: -50px;
+}
+
+.sign_up_button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 323px;
+}
 
 
 
