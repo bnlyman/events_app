@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save 
-      redirect_to comments_path
+      redirect_to :back
     else
       render :new
     end 
@@ -32,4 +32,12 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to comments_path
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:body, :vote_count, :user_id, :event_id)
+  end
+
+
 end
