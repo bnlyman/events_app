@@ -1,4 +1,13 @@
 <%= render partial: 'display_events', locals: {:event => @event} %>
+
+<hr>
+<% @event.comments.each_with_index do |comment, index| %>
+  <%= index + 1 %>
+  <%= comment.body %>
+  <br>
+<% end %>
+<hr>
+
 <%= form_for Comment.new do |f| %>
   <%= f.label :body%>
   <%= f.text_field :body %>
