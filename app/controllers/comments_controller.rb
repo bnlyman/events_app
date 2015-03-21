@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to :back
+      redirect_to @comment.event
     else
       render :edit
     end
@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @event = @comment.event
   end
 
   def destroy
@@ -36,7 +37,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :vote_count, :user_id, :event_id)
+    params.require(:comment).permit(:body, :vote_count, :user_id, :event_id, :rating)
   end
 
 
