@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.find(params[:id])
     if @event.user != current_user
-      redirect_to @event notice: "You are not authorized to edit this event."
+      redirect_to @event, notice: "You are not authorized to edit this event."
     end
   end
 
@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     if @event.user != current_user
-      redirect_to @event notice: "You are not authorized to delete this event."
+      redirect_to @event, notice: "You are not authorized to delete this event."
     else
     @even.destroy
     redirect_to index_path
