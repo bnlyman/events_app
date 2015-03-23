@@ -1,44 +1,57 @@
-<div id="profile_info">
-  <h2>Profile</h2>
-  <p>Name:  <%= current_user.name %><br></p>
-  <p>Age:   <%= current_user.age %><br></p>
-  <p>Where: <%= current_user.location %><br></p>
-  <p>Email: <%= current_user.email %><br></p>
-  <p>Bio:   <%= current_user.bio %><br></p>
-</div>
+<div class="block-update-card status">
+   <div class="update-card-body">
+     <div class="update-card-body">
+		  <h1>Your Profile</h1>
 
-<div class ="container">
-		<h1> Events you've posted</h1>
-		<p><%= link_to 'New Event', new_event_path, class: 'btn btn-primary'%></p>
-		<table id = 'list_events' class = 'table table-striped'>
-			<thead>
-	      <tr>
-	      	<th>Title</th>
-	      	<th>Location</th>
-	        <th>Category</th>
-	        <th>Rating</th>
-	        <th>Price</th>
-	        <th></th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	    <% @user.events.each do |event| %>
-	    <tr>
-			  <td><%= event.title %></td>
-			  <td><%= event.location %></td>
-			  <td><%= event.category %></td>
-			  <td><%= event.rating %></td>
-			  <td>$<%= event.price %></td>
-			  <td>
-			  <div class="btn-group btn-group-xs">
-					<%= link_to 'View', event_path(event), class: "btn btn-primary" %>
-					<%= link_to 'Edit', edit_event_path(event), class: "btn btn-primary" %>
-					<%= link_to 'Delete', event, data: { confirm: "Are you sure you wish to delete this listing?" }, method: :delete, class: "btn btn-primary" %>
-				</div>
-				</td>
-			</tr>
-			<% end %>
-	    </tbody>
-  	</table>
+		  <div class= 'col-md-4'>
+		  	<%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-primary' %>
+			  <h3>Name:  <%= current_user.name %><br></h3>
+			  <h3>Age:   <%= current_user.age %><br></h3>
+			  <h3>Location: <%= current_user.location %><br></h3>
+			  <h3>Email: <%= current_user.email %><br></h3>
+			</div>
+			<div class= 'col-md-8'>
+		  	<h3>Bio:</h3><br>   <p><%= current_user.bio %></p>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="block-update-card status">
+   <div class="update-card-body">
+     <div class="update-card-body">
 
+			<h1> Events you've posted</h1>
+			<p><%= link_to 'New Event', new_event_path, class: 'btn btn-primary'%></p>
+			<table id = 'list_events' class = 'table'>
+				<thead>
+		      <tr>
+		      	<th>Title</th>
+		      	<th>Location</th>
+		        <th>Category</th>
+		        <th>Rating</th>
+		        <th>Price</th>
+		        <th></th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		    <% @user.events.each do |event| %>
+		    <tr>
+				  <td><%= event.title %></td>
+				  <td><%= event.location %></td>
+				  <td><%= event.category %></td>
+				  <td><%= event.rating %></td>
+				  <td>$<%= event.price %></td>
+				  <td>
+				  <div class="btn-group btn-group-xs">
+						<%= link_to 'View', event_path(event), class: "btn btn-primary" %>
+						<%= link_to 'Edit', edit_event_path(event), class: "btn btn-primary" %>
+						<%= link_to 'Delete', event, data: { confirm: "Are you sure you wish to delete this listing?" }, method: :delete, class: "btn btn-primary" %>
+					</div>
+					</td>
+				</tr>
+				<% end %>
+		    </tbody>
+	  	</table>
+		</div>
+	</div>
+</div>

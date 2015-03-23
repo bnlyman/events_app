@@ -1,14 +1,19 @@
 <div class="block-update-card form">
-	<%= bootstrap_form_for @comment do |f| %>
-	  <%= f.text_area :body, label: "Add a comment:"  %>
+	<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+			<h2> Edit this comment</h2>
+			<%= bootstrap_form_for @comment do |f| %>
+			  <%= f.text_area :body, label: "Comment:", class: 'form-control'  %>
 
-	  <%= f.hidden_field :user_id, value: current_user.id %>
+			  <%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>
 
-	  <%= f.hidden_field :event_id, value: @event.id %>
+			  <%= f.hidden_field :event_id, value: @event.id %>
 
-	  
-	  <%= f.select :rating,  options_for_select(%w(1 2 3 4 5 6 7 8 9 10)), label: "Rate your experience 1 - 10 with 1 being 'Horrible' and 10 being 'Awesome'." %>
+			  
+			  <%= f.select :rating,  options_for_select(%w(1 2 3 4 5 6 7 8 9 10)), label: "Rate your experience 1 - 10 with 1 being 'Horrible' and 10 being 'Awesome'." %>
 
-	  <%= f.submit 'Add Comment' %>
-	<% end %>
+			  <%= f.submit 'Add Comment', class: 'btn btn-primary sign_up_button' %>
+			<% end %>
+		</div>
+	</div>
 </div>
