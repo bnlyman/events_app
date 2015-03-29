@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   get 'users/show'
   
-  
- 
   resources :events
   
   resources :comments
